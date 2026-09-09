@@ -81,6 +81,14 @@ a {
   width: 48px;
 }
 
+.brand-tulip {
+  display: inline-block;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  font-size: 0.82em;
+  margin-left: 0.12em;
+  transform: translateY(-0.02em) rotate(5deg);
+}
+
 .main-nav {
   align-items: center;
   display: flex;

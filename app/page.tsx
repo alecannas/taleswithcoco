@@ -50,7 +50,9 @@ export default function Home() {
           <span className="brand-mark" aria-hidden="true">
             <img src="/coco-face-logo.png" alt="" />
           </span>
-          <span>Tales with Coco</span>
+          <span>
+            Tales with Coco <span className="brand-tulip" aria-hidden="true">🌷</span>
+          </span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
           <a href="#stories">Our stories</a>
@@ -173,7 +175,9 @@ export default function Home() {
           <span className="brand-mark" aria-hidden="true">
             <img src="/coco-face-logo.png" alt="" />
           </span>
-          <span>Tales with Coco</span>
+          <span>
+            Tales with Coco <span className="brand-tulip" aria-hidden="true">🌷</span>
+          </span>
         </a>
         <p>A growing collection of family stories, made with love.</p>
         <p>For Coco, always.</p>
