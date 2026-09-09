@@ -35,7 +35,7 @@ const stories = [
       'When the flowers begin to sing after sunset, Coco discovers that every small voice belongs in the song.',
     tag: 'Nature',
     time: '7 min read',
-    className: 'story-card--green',
+    className: 'story-card--lilac',
     number: '03',
     image: '/garden-friends.png',
     alt: 'A watercolor bear cub and mouse listening to flowers at night',
@@ -66,6 +66,12 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
+        <div className="magic-sparkles" aria-hidden="true">
+          <span className="sparkle sparkle--one">✦</span>
+          <span className="sparkle sparkle--two">✧</span>
+          <span className="sparkle sparkle--three">✦</span>
+          <span className="sparkle sparkle--four">·</span>
+        </div>
         <div className="hero-copy">
           <p className="eyebrow">
             <Sparkles size={15} aria-hidden="true" /> A family storybook
@@ -121,6 +127,7 @@ export default function Home() {
               <BookOpen size={15} aria-hidden="true" /> From our story shelf
             </p>
             <h2>Stories to grow up with</h2>
+            <span className="heading-stardust" aria-hidden="true">✦ · ✧</span>
           </div>
           <p>
             Small adventures about courage, kindness, curiosity, and the
