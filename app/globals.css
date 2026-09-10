@@ -2,6 +2,30 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+@font-face {
+  font-display: swap;
+  font-family: 'Coco Fredoka';
+  font-style: normal;
+  font-weight: 400 700;
+  src: url('/fonts/fredoka-semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Coco Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/nunito-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Coco Nunito';
+  font-style: normal;
+  font-weight: 700 900;
+  src: url('/fonts/nunito-bold.ttf') format('truetype');
+}
+
 :root {
   --paper: #fff9f5;
   --paper-deep: #f7eef9;
@@ -15,8 +39,8 @@
   --line: rgba(112, 94, 137, 0.15);
   --white: #fffdfc;
   --radius: 1.5rem;
-  --font-display: 'Iowan Old Style', Baskerville, 'Palatino Linotype', Palatino, Georgia, serif;
-  --font-rounded: 'Avenir Next Rounded', 'Arial Rounded MT Bold', 'Trebuchet MS', sans-serif;
+  --font-display: 'Coco Fredoka', 'Arial Rounded MT Bold', sans-serif;
+  --font-rounded: 'Coco Nunito', 'Avenir Next Rounded', 'Trebuchet MS', sans-serif;
   --font-hand: 'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive;
 }
 
@@ -182,8 +206,8 @@ a {
   font-family: var(--font-display);
   font-size: clamp(3.7rem, 6.7vw, 6.8rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 0.93;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
   margin: 0;
 }
 
@@ -470,7 +494,7 @@ a {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 4vw, 4rem);
   font-weight: 400;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   line-height: 1.05;
   margin: 0;
 }
@@ -575,7 +599,8 @@ a {
   font-family: var(--font-display);
   font-size: 1.55rem;
   font-weight: 400;
-  line-height: 1.18;
+  letter-spacing: -0.02em;
+  line-height: 1.14;
   margin: 1rem 0.65rem 0.7rem;
 }
 
@@ -779,8 +804,8 @@ footer p:last-child {
   font-family: var(--font-display);
   font-size: clamp(3.7rem, 8vw, 8.4rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
   margin: 1rem 0 1.4rem;
   text-wrap: balance;
 }
@@ -813,7 +838,7 @@ footer p:last-child {
 .scene-number { color: var(--coral); font-family: var(--font-display); font-size: 0.78rem; font-style: italic; }
 .scene-sound { color: var(--sage-dark) !important; font-size: 0.66rem !important; font-weight: 800; letter-spacing: 0.18em; margin: 0.65rem 0 1.1rem !important; text-transform: uppercase; }
 .story-scene h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 400; letter-spacing: -0.035em; line-height: 1.02; margin: 0 0 1.35rem; }
-.story-scene > p:not(.scene-sound) { color: var(--ink-soft); font-family: var(--font-display); font-size: 1.05rem; line-height: 1.78; margin: 0 0 1rem; }
+.story-scene > p:not(.scene-sound) { color: var(--ink-soft); font-family: var(--font-rounded); font-size: 1.05rem; line-height: 1.78; margin: 0 0 1rem; }
 
 .story-moral { align-items: center; background: var(--paper-deep); display: flex; flex-direction: column; min-height: 78svh; padding: 8rem 2rem; text-align: center; }
 .story-moral > svg { color: var(--coral); margin-bottom: 2rem; }
