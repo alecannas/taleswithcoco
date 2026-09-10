@@ -8,37 +8,40 @@ import {
 
 const stories = [
   {
-    title: 'The Moon Who Lost Her Glow',
+    title: 'Pip and the Pocketful of Sunbeams',
     excerpt:
-      'Coco follows a silver trail through the sleepy woods to help the moon remember how brightly she can shine.',
-    tag: 'Bedtime',
-    time: '6 min read',
+      'One bright splash teaches Pip that joy becomes bigger every time it is noticed and shared.',
+    tag: 'Joy',
+    time: '8 min read',
     className: 'story-card--blue',
     number: '01',
-    image: '/moon-bunny.png',
-    alt: 'A watercolor bunny offering a glowing star to the moon',
+    image: '/story-joy.jpg',
+    alt: 'Pip the mouse dancing in a sunlit meadow',
+    slug: 'joy',
   },
   {
-    title: 'Coco and the Pocket-Sized Cloud',
+    title: 'The Lantern Left in the Rain',
     excerpt:
-      'A tiny raincloud needs a brave friend, a warm cup of tea, and just the right place to make a rainbow.',
-    tag: 'Wonder',
-    time: '5 min read',
+      'Mara discovers that even the smallest shelter can become a whole world to someone in need.',
+    tag: 'Kindness',
+    time: '8 min read',
     className: 'story-card--rose',
     number: '02',
-    image: '/cloud-fox.png',
-    alt: 'A watercolor fox carrying a tiny raincloud through a meadow',
+    image: '/story-kindness.jpg',
+    alt: 'A bear cub sheltering a moth beneath a lantern',
+    slug: 'kindness',
   },
   {
-    title: 'The Garden That Hummed at Night',
+    title: 'The Bridge Between Two Burrows',
     excerpt:
-      'When the flowers begin to sing after sunset, Coco discovers that every small voice belongs in the song.',
-    tag: 'Nature',
-    time: '7 min read',
+      'A careful rabbit and a spontaneous fox learn to build from both sides—and meet in the middle.',
+    tag: 'Friendship',
+    time: '9 min read',
     className: 'story-card--lilac',
     number: '03',
-    image: '/garden-friends.png',
-    alt: 'A watercolor bear cub and mouse listening to flowers at night',
+    image: '/story-friendship.jpg',
+    alt: 'A rabbit and fox meeting on a handmade bridge',
+    slug: 'friendship',
   },
 ];
 
@@ -148,7 +151,7 @@ export default function Home() {
               </div>
               <h3>{story.title}</h3>
               <p>{story.excerpt}</p>
-              <a href="#from-us" aria-label={`Read ${story.title}`}>
+              <a href={`/stories/${story.slug}`} aria-label={`Read ${story.title}`}>
                 Read this tale <ArrowRight size={16} aria-hidden="true" />
               </a>
             </article>
