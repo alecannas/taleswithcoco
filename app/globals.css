@@ -192,12 +192,15 @@ a {
 }
 
 .coco-gaze {
+  --gaze-tilt-x: 0deg;
+  --gaze-tilt-y: 0deg;
   --gaze-turn: 0deg;
   --gaze-x: 0px;
   --gaze-y: 0px;
   cursor: none;
   height: 112px;
   position: absolute;
+  perspective: 600px;
   right: -0.5rem;
   top: -4.8rem;
   touch-action: manipulation;
@@ -213,8 +216,9 @@ a {
   display: block;
   height: 100%;
   overflow: hidden;
-  transform: translate(var(--gaze-x), var(--gaze-y)) rotate(var(--gaze-turn));
-  transition: transform 240ms cubic-bezier(0.2, 0.9, 0.3, 1.25), border-radius 240ms ease, box-shadow 240ms ease;
+  transform: translate(var(--gaze-x), var(--gaze-y)) rotateZ(var(--gaze-turn)) rotateX(var(--gaze-tilt-x)) rotateY(var(--gaze-tilt-y));
+  transition: transform 110ms ease-out, border-radius 240ms ease, box-shadow 240ms ease;
+  transform-style: preserve-3d;
   width: 100%;
 }
 
@@ -253,9 +257,9 @@ a {
 .coco-gaze-spark--two { animation: sparkle-pulse 3.4s ease-in-out 0.7s infinite; bottom: 0.3rem; color: var(--sage); left: -0.75rem; }
 
 @keyframes coco-pop {
-  0%, 100% { transform: translate(var(--gaze-x), var(--gaze-y)) rotate(var(--gaze-turn)) scale(1); }
-  42% { transform: translate(var(--gaze-x), calc(var(--gaze-y) - 8px)) rotate(var(--gaze-turn)) scale(1.1, 0.94); }
-  68% { transform: translate(var(--gaze-x), var(--gaze-y)) rotate(var(--gaze-turn)) scale(0.97, 1.04); }
+  0%, 100% { transform: translate(var(--gaze-x), var(--gaze-y)) rotateZ(var(--gaze-turn)) rotateX(var(--gaze-tilt-x)) rotateY(var(--gaze-tilt-y)) scale(1); }
+  42% { transform: translate(var(--gaze-x), calc(var(--gaze-y) - 8px)) rotateZ(var(--gaze-turn)) rotateX(var(--gaze-tilt-x)) rotateY(var(--gaze-tilt-y)) scale(1.1, 0.94); }
+  68% { transform: translate(var(--gaze-x), var(--gaze-y)) rotateZ(var(--gaze-turn)) rotateX(var(--gaze-tilt-x)) rotateY(var(--gaze-tilt-y)) scale(0.97, 1.04); }
 }
 
 .eyebrow {
@@ -731,8 +735,11 @@ a {
 
 .signature {
   color: var(--coral);
-  font-family: var(--font-hand);
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   margin: 1.8rem 0 0;
   transform: rotate(-2deg);
   width: max-content;

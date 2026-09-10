@@ -178,7 +178,7 @@ export default function Home() {
             does—with new characters, new places, and a little more wonder on
             every page.
           </p>
-          <p className="signature">Emily &amp; Alessandro</p>
+          <p className="signature">Emily &amp; Ale</p>
         </div>
       </section>
 
