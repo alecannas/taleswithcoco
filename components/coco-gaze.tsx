@@ -26,16 +26,11 @@ export function CocoGaze() {
       const dy = event.clientY - (faceBounds.top + faceBounds.height / 2);
       const x = Math.max(-1, Math.min(1, dx / (heroBounds.width * 0.45)));
       const y = Math.max(-1, Math.min(1, dy / (heroBounds.height * 0.45)));
-      const orbit = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
-
       if (frameRef.current) cancelAnimationFrame(frameRef.current);
       frameRef.current = requestAnimationFrame(() => {
         face!.classList.add('is-curious');
-        face!.style.setProperty('--gaze-x', `${x * 11}px`);
-        face!.style.setProperty('--gaze-y', `${y * 8}px`);
-        face!.style.setProperty('--gaze-turn', `${orbit}deg`);
-        face!.style.setProperty('--gaze-tilt-x', `${-y * 14}deg`);
-        face!.style.setProperty('--gaze-tilt-y', `${x * 18}deg`);
+        face!.style.setProperty('--gaze-x', `${x * 62}px`);
+        face!.style.setProperty('--gaze-y', `${y * 42}px`);
       });
     }
 
@@ -52,9 +47,6 @@ export function CocoGaze() {
     face.classList.remove('is-curious');
     face.style.setProperty('--gaze-x', '0px');
     face.style.setProperty('--gaze-y', '0px');
-    face.style.setProperty('--gaze-turn', '0deg');
-    face.style.setProperty('--gaze-tilt-x', '0deg');
-    face.style.setProperty('--gaze-tilt-y', '0deg');
   }
 
   function makeCocoPop() {
@@ -69,7 +61,7 @@ export function CocoGaze() {
       className="coco-gaze"
       ref={faceRef}
       role="img"
-      aria-label="A playful portrait of Coco that rotates as your pointer circles the hero"
+      aria-label="A playful portrait of Coco that moves toward your pointer"
       onPointerDown={makeCocoPop}
     >
       <span className="coco-gaze-spark coco-gaze-spark--one" aria-hidden="true">✦</span>
