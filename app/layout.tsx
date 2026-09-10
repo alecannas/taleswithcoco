@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://tales-with-coco.alecannas.chatgpt.site'),
   title: 'Tales with Coco 🌷 | A family storybook',
   description:
-    'A growing collection of bedtime stories, tiny wonders, and brave little adventures written by Emily and Alessandro for Coco.',
+    'A growing collection of bedtime stories, tiny wonders, and brave little adventures written by mom Emily and dad Ale for Coco.',
   icons: {
     icon: '/favicon.svg',
   },

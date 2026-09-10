@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, Heart, Sparkles } from 'lucide-react';
 
-type Story = {
+export type Story = {
   title: string;
   virtue: string;
   subtitle: string;
@@ -13,7 +13,7 @@ type Story = {
   closing: string;
 };
 
-const stories: Record<string, Story> = {
+export const stories: Record<string, Story> = {
   joy: {
     title: 'Pip and the Pocketful of Sunbeams',
     virtue: 'A story about joy',
@@ -132,13 +132,25 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   const { slug } = await params;
   const story = stories[slug];
 
+  return <StoryExperience story={story} slug={slug} locale="en" />;
+}
+
+export function StoryExperience({ story, slug, locale }: { story?: Story; slug: string; locale: 'en' | 'it' }) {
+  const ui = locale === 'it'
+    ? { missing: 'Questa storia si sta ancora sognando.', shelf: 'Torna alle storie', begin: 'Scorri per iniziare', another: 'Scegli un’altra storia' }
+    : { missing: 'This tale is still being dreamed.', shelf: 'Story shelf', begin: 'Scroll to begin', another: 'Choose another tale' };
+
   if (!story) {
-    return <main className="story-missing"><h1>This tale is still being dreamed.</h1><a href="/#stories">Return to the story shelf</a></main>;
+    return <main className="story-missing"><h1>{ui.missing}</h1><a href={`/${locale}#stories`}>{ui.shelf}</a></main>;
   }
 
   return (
     <main className={`immersive-story immersive-story--${story.color}`}>
-      <a className="story-back" href="/#stories"><ArrowLeft size={17} /> Story shelf</a>
+      <a className="story-back" href={`/${locale}#stories`}><ArrowLeft size={17} /> {ui.shelf}</a>
+      <nav className="story-language language-switcher" aria-label={locale === 'it' ? 'Lingua' : 'Language'}>
+        <a href={`/en/stories/${slug}`} aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
+        <a href={`/it/stories/${slug}`} aria-current={locale === 'it' ? 'page' : undefined}>IT</a>
+      </nav>
       <div className="story-progress" aria-hidden="true"><span /></div>
 
       <header className="story-cover">
@@ -149,7 +161,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <h1>{story.title}</h1>
           <div className="story-title-rule" />
           <p className="story-subtitle">{story.subtitle}</p>
-          <span className="scroll-invitation">Scroll to begin <ArrowRight size={16} /></span>
+          <span className="scroll-invitation">{ui.begin} <ArrowRight size={16} /></span>
         </div>
       </header>
 
@@ -174,7 +186,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         <Heart aria-hidden="true" />
         <p>{story.closing}</p>
         <span>{story.dedication}</span>
-        <a href="/#stories">Choose another tale <ArrowRight size={16} /></a>
+        <a href={`/${locale}#stories`}>{ui.another} <ArrowRight size={16} /></a>
       </section>
     </main>
   );
