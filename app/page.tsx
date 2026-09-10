@@ -5,6 +5,7 @@ import {
   MoonStar,
   Sparkles,
 } from 'lucide-react';
+import { CocoGaze } from '@/components/coco-gaze';
 
 const stories = [
   {
@@ -76,6 +77,7 @@ export default function Home() {
           <span className="sparkle sparkle--four">·</span>
         </div>
         <div className="hero-copy">
+          <CocoGaze />
           <p className="eyebrow">
             <Sparkles size={15} aria-hidden="true" /> A family storybook
           </p>
